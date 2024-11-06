@@ -4,7 +4,8 @@ exports.getTasks = async (request, response) => {
   const userId = request.params.userId;
   try {
     const result = await database.pool.query(
-      "SELECT * FROM tasks WHERE userId = $1 ORDER BY created_at DESC"[userId]
+      "SELECT * FROM tasks WHERE userId = $1 ORDER BY created_at DESC",
+      [userId]
     );
 
     return response.status(200).json(result.rows);
