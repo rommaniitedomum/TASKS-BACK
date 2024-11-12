@@ -14,5 +14,6 @@ app.get("/", (req, res) => {
 app.use(require("./routes/getRoutes"));
 app.use(require("./routes/deleteRoutes"));
 app.use(require("./routes/postRoutes"));
+app.use(require("./routes/updateRoutes"));
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
